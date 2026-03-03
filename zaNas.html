@@ -59,23 +59,48 @@
 
 <div class="history-wrapper">
   <div class="history-video">
-    <!-- <video controls poster="IMAGES/Видео.png">
-      <source src="IMAGES/_720P.mp4" type="video/mp4">
-    </video>  -->
     <iframe width="560" height="315" src="https://www.youtube.com/embed/pDu1pXEPR18?si=iDyN2cIxUSX4E7ab" title="YouTube video player" 
     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
 
   <div class="history-text">
-    <p>
-        СОУ „Ристе Ристески - Ричко“ е едно од најзначајните стручни училишта во Прилеп.
-        Со децении образува квалитетен кадар подготвен за современиот пазар на труд.
-    </p>
-    <p>
-        Училиштето постојано инвестира во развој, модерна опрема и стручно усовршување.
-    </p>
-  </div>
+    <div class="history-slider">
+        <div class="history-slide active">
+            <p>
+                СОУ „Ристе Ристески - Ричко“ е едно од најзначајните стручни училишта во Прилеп.
+                Со децении образува квалитетен кадар подготвен за современиот пазар на труд.
+            </p>
+            <p>
+                Училиштето постојано инвестира во развој, модерна опрема и стручно усовршување.
+            </p>
+        </div>
+
+        <div class="history-slide">
+            <p>
+                Училиштето го носи името на Ристе Ристески-Ричко, истакнат првоборец и народен херој од Прилеп, 
+                кој го положил својот живот за слободата на Македонија во текот на Втората светска војна. 
+                Неговиот лик и дело се симбол на борбеноста и посветеноста, вредности кои училиштето се труди да ги всади кај своите ученици.
+            </p>
+        </div>
+
+        <div class="history-slide">
+    <ul>
+        <li>
+            <strong>Дуално образование:</strong> Како лидер во стручното образование, училиштето соработува со голем број приватни компании во Прилеп, овозможувајќи им на учениците практична настава директно во производствените капацитети.
+        </li>
+        <li>
+            <strong>Опременост:</strong> Училиштето располага со современи кабинети, работилници и лаборатории каде се применуваат најновите технологии и софтвери.
+        </li>
+    </ul>
+</div>
+    </div>
+
+    <div class="slider-controls">
+        <button onclick="changeSlide(-1)" class="slider-btn"><i class="fas fa-chevron-left"></i></button>
+        <button onclick="changeSlide(1)" class="slider-btn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</div>
 </div>
 </section>
 
@@ -533,6 +558,28 @@
         } 
         window.addEventListener('scroll', reveal);
         reveal();
+
+        let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.history-slide');
+
+function changeSlide(direction) {
+    // Тргни го 'active' од моменталниот слајд
+    slides[currentSlideIndex].classList.remove('active');
+    
+    // Пресметај го новиот индекс
+    currentSlideIndex += direction;
+    
+    // Направи „круг“ ако стигне до крај или почеток
+    if (currentSlideIndex >= slides.length) {
+        currentSlideIndex = 0;
+    }
+    if (currentSlideIndex < 0) {
+        currentSlideIndex = slides.length - 1;
+    }
+    
+    // Додај 'active' на новиот слајд
+    slides[currentSlideIndex].classList.add('active');
+}
   </script>
 
 </body>
