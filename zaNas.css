@@ -490,6 +490,53 @@ footer {
     font-size: 1rem;
     line-height: 1.8;
     color: var(--steel-blue);
+    margin-left: 50px;
+}
+
+
+/* Slider Styling */
+.history-slider {
+    position: relative;
+    min-height: 200px; 
+}
+
+.history-slide {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.history-slide.active {
+    display: block;
+}
+
+/* Копчиња за навигација */
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;               
+    margin-top: 30px;        
+    width: 100%;           
+}
+
+.slider-btn {
+    background: var(--ricko-blue);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.slider-btn:hover {
+    background: var(--orange);
+    transform: scale(1.1);
 }
 
 /* =================АДМИНИСТРАТИВЕН ДЕЛ================= */
@@ -752,6 +799,15 @@ footer {
     .about-hero {
         background-position: left top;
     }
+
+    .slider-controls {
+        justify-content: center;
+    }
+    
+    .history-text {
+        margin-left: 0;
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -767,3 +823,9 @@ footer {
         height: 150px;
     }
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
