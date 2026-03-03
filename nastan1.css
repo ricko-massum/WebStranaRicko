@@ -194,15 +194,25 @@
         .content-text { font-size: 1.1rem; color: #555; margin-bottom: 60px; }
         .content-text p { margin-bottom: 25px; }
 
-        /* Video Section */
+        
         .video-container {
-            background: #000;
-            border-radius: 24px;
-            overflow: hidden;
-            position: relative;
-            padding-top: 56.25%; /* 16:9 Ratio */
-            margin-bottom: 80px;
-            box-shadow: var(--shadow-md);
+         position: relative;
+         width: 100%;
+         padding-bottom: 56.25%; 
+         height: 0;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: var(--shadow-md);
+        margin-top: 20px;
+        }
+
+        .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
         }
         .video-container video {
             position: absolute;
