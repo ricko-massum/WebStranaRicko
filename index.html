@@ -10,13 +10,13 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="IMAGES/favicon.ico">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index3.css">
 </head>
 <body>
 
     <header>
         <div class="logo-badge reveal">
-            <div class="logo-badge">
+           
             <img src="IMAGES/Лого.png" alt="Лого СОУ Ристе Ристески Ричко">
         </div>
             </div>
@@ -24,14 +24,14 @@
         <div class="header-title reveal d-100">
             <strong>СОУ „Ристе Ристески</strong>
             <span>- Ричко“</span>
-        </div>
+        </div> 
 
         <nav>
             <ul class="nav-menu" id="nav-menu">
                 <li class="reveal d-100"><a href="#home" class="nav-link">Почетна</a></li>
                 <li class="reveal d-100"><a href="zaNas.html" class="nav-link">За нас</a></li>
                 <li class="reveal d-200"><a href="nastani.html" class="nav-link">Настани</a></li>
-                <li class="reveal d-300"><a href="struki.html" class="nav-link">Квалификации и сектори</a></li>
+                <li class="reveal d-300"><a href="sektori12.html" class="nav-link">Квалификации и сектори</a></li>
                 <li class="reveal d-400"><a href="#location" class="nav-link">Контакт</a></li>
             </ul>
         </nav>
@@ -154,34 +154,34 @@
                     <div class="sector-icon"><i class="fas fa-bolt"></i></div>
                     <h4>Електротехника</h4>
                     <p>Компјутерска техника, автоматика и електроника. Дуално образование.</p>
-                    <a href="struki.html" class="btn btn-outline">Детали</a>
+                    <a href="sektori12.html" class="btn btn-outline">Детали</a>
                 </div>
 
                 <div class="sector-card reveal d-200">
                     <div class="sector-icon"><i class="fas fa-cogs"></i></div>
                     <h4>Машинство</h4>
                     <p>CNC управување, моторни возила и машинска енергетика.</p>
-                    <a href="struki.html" class="btn btn-outline">Детали</a>
+                    <a href="sektori12.html" class="btn btn-outline">Детали</a>
                 </div>
 
                 <div class="sector-card reveal d-300">
                     <div class="sector-icon"><i class="fas fa-road"></i></div>
                     <h4>Сообраќај</h4>
                     <p>Техничар за транспорт и шпедиција. Логистика и безбедност.</p>
-                    <a href="struki.html" class="btn btn-outline">Детали</a>
+                    <a href="sektori12.html" class="btn btn-outline">Детали</a>
                 </div>
 
                 <div class="sector-card reveal d-400">
                     <div class="sector-icon"><i class="fas fa-pen-nib"></i></div>
                     <h4>Графичарство</h4>
                     <p>Графички дизајн и мултимедија. Креирај ја иднината.</p>
-                    <a href="struki.html" class="btn btn-outline">Детали</a>
+                    <a href="sektori12.html" class="btn btn-outline">Детали</a>
                 </div>
                 <div class="sector-card reveal d-400">
                     <div class="sector-icon"><i class="fas fa-basketball-ball"></i></div>
                     <h4>Спортска Гимназија</h4>
                     <p>Времетраење на образовен процес: четири години</p>
-                    <a href="struki.html" class="btn btn-outline">Детали</a>
+                    <a href="sektori12.html" class="btn btn-outline">Детали</a>
                 </div>
             </div>
         </div>
@@ -360,5 +360,15 @@
         observer.observe(statsSection);
 
     </script>
+    <script>
+    window.addEventListener('scroll', () => {
+        const logoBadge = document.querySelector('.logo-badge');
+        if (window.scrollY > 50) {
+            logoBadge.classList.add('scrolled');
+        } else {
+            logoBadge.classList.remove('scrolled');
+        }
+    });
+</script>
 </body>
 </html>
