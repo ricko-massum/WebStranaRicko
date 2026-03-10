@@ -13,11 +13,10 @@
 
 <body>
     <header>
-        <div class="logo-badge reveal">
+       
             <div class="logo-badge">
             <img src="IMAGES/Лого.png" alt="Лого СОУ Ристе Ристески Ричко">
         </div>
-            </div>
 
         <div class="header-title reveal d-100">
             <strong>СОУ „Ристе Ристески</strong>
@@ -538,12 +537,13 @@
     </footer>
 
   <script>
-        // 1. MOBILE MENU TOGGLE
+        // 1. MOBILE MENU TOGGLE (Slide from right)
         function toggleMenu() {
-              const nav = document.getElementById('nav-menu');
-              nav.classList.toggle('active');
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('active');
         }
-        // 2. SCROLL REVEAL ANIMATION 
+
+        // 2. SCROLL REVEAL ANIMATION
         function reveal() {
             var reveals = document.querySelectorAll('.reveal');
             var windowHeight = window.innerHeight;
@@ -559,29 +559,31 @@
         window.addEventListener('scroll', reveal);
         reveal();
 
+        // 3. LOGO SCROLL EFFECT (Added this to fix shrinking logo)
+        window.addEventListener('scroll', () => {
+            const logoBadge = document.querySelector('.logo-badge');
+            if (window.scrollY > 50) {
+                logoBadge.classList.add('scrolled');
+            } else {
+                logoBadge.classList.remove('scrolled');
+            }
+        });
+
+        // 4. HISTORY SLIDER LOGIC
         let currentSlideIndex = 0;
-const slides = document.querySelectorAll('.history-slide');
+        const slides = document.querySelectorAll('.history-slide');
 
-function changeSlide(direction) {
-    // Тргни го 'active' од моменталниот слајд
-    slides[currentSlideIndex].classList.remove('active');
-    
-    // Пресметај го новиот индекс
-    currentSlideIndex += direction;
-    
-    // Направи „круг“ ако стигне до крај или почеток
-    if (currentSlideIndex >= slides.length) {
-        currentSlideIndex = 0;
-    }
-    if (currentSlideIndex < 0) {
-        currentSlideIndex = slides.length - 1;
-    }
-    
-    // Додај 'active' на новиот слајд
-    slides[currentSlideIndex].classList.add('active');
-}
-  </script>
-
+        function changeSlide(direction) {
+            slides[currentSlideIndex].classList.remove('active');
+            currentSlideIndex += direction;
+            if (currentSlideIndex >= slides.length) {
+                currentSlideIndex = 0;
+            }
+            if (currentSlideIndex < 0) {
+                currentSlideIndex = slides.length - 1;
+            }
+            slides[currentSlideIndex].classList.add('active');
+        }
+    </script>
 </body>
 </html>
-
