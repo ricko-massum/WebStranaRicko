@@ -1,12 +1,10 @@
 /* ==========================================================================
-   1. CORE VARIABLES & SETUP (Synced with Index)
+   1. CORE VARIABLES
    ========================================================================== */
 :root {
-    --dark-blue: #2c3e50;       
-    --ricko-blue: #3B4A6B;     
-    --steel-blue: #607D8B;      
-    --orange: #E88D56;          
-    --orange-dark: #d35400;     
+    --ricko-blue: #3B4A6B;
+    --steel-blue: #607D8B;
+    --orange: #E88D56;
     --white: #ffffff;
     --bg-gray: #f4f7f6;
     --header-height: 100px;
@@ -17,15 +15,16 @@
     --transition-smooth: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+/* ==========================================================================
+   2. GLOBAL STYLES
+   ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--white);
     color: #444;
     line-height: 1.8;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
@@ -39,13 +38,13 @@ body {
 .reveal.active { transform: translateY(0); opacity: 1; }
 
 /* ==========================================================================
-   2. HEADER & NAVIGATION (Identical to Index)
+   3. HEADER
    ========================================================================== */
 header {
     height: var(--header-height);
     background: var(--white);
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end; 
     align-items: center;
     padding: 0 5%;
     position: sticky;
@@ -59,38 +58,38 @@ header {
 .logo-badge {
     position: absolute;
     top: 0;
-    left: 5%;
+    left: 5%; 
     width: var(--badge-width);
     height: var(--badge-height);
     background: var(--white);
-    border-radius: 0 0 50% 50%;
+    border-radius: 0 0 50% 50%; 
     box-shadow: var(--shadow-md);
     z-index: 1001;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     border: 1px solid #eee;
     border-top: none;
-    transition: all 0.6s ease-in-out;
+    /* This line controls the speed. 0.8s makes it slower and smoother */
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     cursor: pointer;
 }
 
+/* Scrolled State Animation */
 .logo-badge.scrolled {
     height: 95px;
     width: 110px;
     border-radius: 0 0 20px 20px;
+    box-shadow: var(--shadow-sm);
 }
 
 .logo-badge:hover:not(.scrolled) {
-    height: calc(var(--badge-height) + 15px);
+    height: calc(var(--badge-height) + 15px); 
     background: #fffdf5;
 }
 
-.logo-badge img {
-    width: 85%;
-    height: 85%;
-    object-fit: contain;
-}
+.logo-badge img { width: 85%; height: auto; object-fit: contain; }
 
 .header-title {
     position: absolute;
@@ -102,24 +101,17 @@ header {
     line-height: 1.3;
     color: var(--ricko-blue);
     letter-spacing: 1px;
-    pointer-events: none;
+    pointer-events: none; 
 }
-
-.header-title strong {
-    font-weight: 900;
-    display: block;
-    font-size: 1.3rem;
-}
-
-.header-title span {
-    color: var(--orange);
-}
-
+.header-title strong { font-weight: 900; display: block; font-size: 1.3rem; }
+.header-title span { color: var(--orange); }
 
 .nav-menu { 
     display: flex; 
     gap: 40px; 
-    list-style: none; /* <--- ADD THIS LINE TO REMOVE THE DOTS */
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-link {
@@ -133,31 +125,26 @@ header {
     text-decoration: none;
 }
 
-.nav-link:hover, .nav-link.active { color: var(--orange); }
-
 .nav-link::after {
     content: '';
     position: absolute;
     bottom: 0; left: 0; width: 0; height: 3px;
     background: var(--orange);
-    transition: 0.3s;
+    transition: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-link:hover { color: var(--orange); }
+.nav-link:hover::after { width: 100%; }
 
-.hamburger {
-    display: none;
-    font-size: 1.8rem;
-    color: var(--ricko-blue);
-    cursor: pointer;
-}
+.hamburger { display: none; font-size: 1.8rem; color: var(--ricko-blue); cursor: pointer; }
+
 /* ==========================================================================
-   3. ARTICLE CONTENT (Main Event Styles)
+   4. ARTICLE CONTENT
    ========================================================================== */
 .article-main { padding: 80px 0; }
+
 .article-header { margin-bottom: 40px; }
 .article-title { font-size: 2.8rem; font-weight: 900; color: var(--ricko-blue); line-height: 1.2; margin-bottom: 20px; }
-
 .article-meta { 
     display: flex; 
     align-items: center; 
@@ -176,11 +163,28 @@ header {
     box-shadow: var(--shadow-md);
     margin-bottom: 50px;
 }
-.main-img-wrapper img { width: 100%; display: block; background: #eee; min-height: 400px; object-fit: cover; }
+.main-img-wrapper img { width: 100%; display: block; }
 
 .content-text { font-size: 1.1rem; color: #555; margin-bottom: 60px; }
 .content-text p { margin-bottom: 25px; }
 
+/* Video Section */
+.video-container {
+    background: #000;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Ratio */
+    margin-bottom: 80px;
+    box-shadow: var(--shadow-md);
+}
+.video-container video {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; /* Ensures the poster fills the space nicely */
+}
+
+/* Gallery Grid */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -191,8 +195,7 @@ header {
     height: 220px;
     border-radius: 15px;
     overflow: hidden;
-    background: #f0f0f0;
-    border: 1px solid #eee;
+    background: #eee;
 }
 .gallery-item img {
     width: 100%; height: 100%; object-fit: cover;
@@ -200,6 +203,7 @@ header {
 }
 .gallery-item:hover img { transform: scale(1.08); }
 
+/* Back Button */
 .back-nav { border-top: 1px solid #eee; padding-top: 40px; }
 .btn-back {
     display: inline-flex;
@@ -214,21 +218,22 @@ header {
     transition: 0.3s;
 }
 .btn-back:hover { background: var(--orange); transform: translateX(-5px); }
+
 /* ==========================================================================
-   4. FOOTER (Identical to Index)
+   5. FOOTER
    ========================================================================== */
 footer {
     background-color: #1a252f;
     color: #bdc3c7;
     padding: 80px 0 20px;
     font-size: 0.9rem;
-    margin-top: 100px;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 50px;
+    margin-bottom: 60px;
 }
 
 .footer-logo {
@@ -237,12 +242,12 @@ footer {
     border-bottom: 3px solid var(--orange);
 }
 
-.footer-links { list-style: none; }
-.footer-links li { margin-bottom: 12px; }
-.footer-links a { text-decoration: none; color: inherit; transition: 0.3s; }
+.footer-links li  {
+     margin-bottom: 12px;
+    list-style-type: none;
+}
 .footer-links a:hover { color: var(--orange); padding-left: 5px; }
 
-.social-icons { margin-top: 20px; }
 .social-icons a {
     display: inline-flex; width: 40px; height: 40px;
     background: rgba(255,255,255,0.1);
@@ -250,73 +255,71 @@ footer {
     align-items: center; justify-content: center;
     margin-right: 10px;
     transition: 0.3s;
-    color: #fff;
-    text-decoration: none;
 }
-.social-icons a:hover { background: var(--orange); transform: translateY(-3px); }
-
-/* Special styling for the 'M' logo */
-.social-logo-btn { font-weight: 900; }
-.social-logo-btn .r-symbol { font-style: normal; color: var(--orange); }
-.social-icons a:hover .r-symbol { color: #fff; }
+.social-icons a:hover { background: var(--orange); color: white; }
+.social-icons a .r-symbol { font-style: normal; color: var(--orange); font-weight: 900; }
+.social-icons a:hover .r-symbol { color: white; }
 
 .copyright {
     border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 25px;
     text-align: center;
-    margin-top: 60px;
     font-size: 0.8rem;
 }
 
-/* ==========================================================================
-   5. RESPONSIVE DESIGN (Synced with Index)
-   ========================================================================== */
- @media (max-width: 768px) {
-.header-title {
-    display: none;
+footer a {
+   color: #bdc3c7; 
+   text-decoration: none;
 }
-    .nav-menu {
-        position: fixed;
-        top: var(--header-height);
-        right: -100%; /* start hidden on right */
-        width: 100%;
-        height: calc(100vh - var(--header-height));
-        background: var(--white);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-        transition: 0.4s;
-        z-index: 999;
-    }
 
-    .nav-menu.active {
-        right: 0; /* slide in from right */
-    }
+.footer-text { 
+    margin-bottom: 15px; 
+    font-weight: 400; 
+    color: #607d8b;
+}
 
-    .nav-link {
-        font-size: 1rem;
-    }    
-
-    .hamburger {
-        display: block;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-  .logo-badge {
-        position: left;
-        left: 5;
+/* ==========================================================================
+   6. RESPONSIVE DESIGN 
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .header-title { display: none; } 
+    header { justify-content: space-between; padding: 0 30px; }
+    
+    .logo-badge {
+        position: relative;
+        left: 0;
         top: 0;
         height: 90px;
         width: 90px;
         border-radius: 0 0 15px 15px;
         transform: none;
     }
+
     .logo-badge.scrolled {
-        padding-top: 10px;
-        height: 82px;
-        width: 82px;
+        height: 75px;
+        width: 75px;
         border-radius: 0 0 10px 10px;
-    }}
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: var(--header-height);
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .hamburger { display: block; }
+}
