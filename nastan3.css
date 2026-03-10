@@ -87,15 +87,20 @@ header {
     transform: translateY(-50%);
     text-transform: uppercase;
     font-size: 1.1rem;
+    line-height: 1.3;
     color: var(--ricko-blue);
     letter-spacing: 1px;
+    pointer-events: none; 
 }
 .header-title strong { font-weight: 900; display: block; font-size: 1.3rem; }
+.header-title span { color: var(--orange); }
 
 .nav-menu { 
     display: flex; 
     gap: 40px; 
-    list-style: none; /* Removed dots */
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-link {
