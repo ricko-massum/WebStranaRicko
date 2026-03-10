@@ -12,24 +12,30 @@
 </head>
 <body>
 
-    <header id="sport">
-        <a href="index.html" class="logo-badge">
+    <header>
+        <a href="index.html" class="logo-badge" id="logoBadge">
             <img src="IMAGES/Лого.png" alt="Logo">
         </a>
-        <div class="header-title reveal d-100">
+        
+         <div class="header-title reveal d-100">
             <strong>СОУ „Ристе Ристески</strong>
             <span>- Ричко“</span>
-        </div>
+        </div> 
+
         
         <nav>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="index.html" class="nav-link">Почетна</a></li>
                 <li><a href="zaNas.html" class="nav-link">За нас</a></li>
-                <li><a href="nastani.html" class="nav-link">Настани</a></li>
+                <li><a href="nastani.html" class="nav-link active">Настани</a></li>
                 <li><a href="struki.html" class="nav-link">Квалификации и сектори</a></li>
                 <li><a href="index.html#location" class="nav-link">Контакт</a></li>
             </ul>
         </nav>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
     </header>
 
     <main class="article-main">
@@ -37,7 +43,7 @@
             
             <div class="article-header reveal">
                 <div class="article-meta">
-                    <span><i class="far fa-calendar-alt"></i>25.12.2025 </span>
+                    <span><i class="far fa-calendar-alt"></i> 25.12.2025</span>
                     <span><i class="fas fa-tag"></i> Спорт</span>
                 </div>
                 <h1 class="article-title">Зонски натпревари во футсал</h1>
@@ -49,13 +55,12 @@
 
             <div class="content-text reveal">
                 <p><strong>ГОЛЕМ УСПЕХ НА ЗОНСКИТЕ НАТПРЕВАРИ ВО ФУТСАЛ ЗА РИЧКО ⚽🏆</strong></p>
-                <p>На 25.12.2025 година, во салата на СОУ „Ристе Ристески – Ричко“, се одиграа зонските натпревари во футсал  во машка конкуренција. 
+                <p>На 25.12.2025 година, во салата на СОУ „Ристе Ристески – Ричко“, се одиграа зонските натпревари во футсал во машка конкуренција. 
                     Нашата екипа настапи одлично и убедливо го освои првото место, забележувајќи победи на двата натпревари.</p>
                 <p>Екипата беше успешно водена од професорите Илија Ангелески и Христијан Митрески.</p>
- <p>На 26.12.2025 г. следуваше уште еден голем успех – прво место на зонските натпревари во женска конкуренција, исто така со две победи.
-Ментор на женската екипа беше Илија Ангелески.</p>
-                <p>Честитки до сите учесници за победата,
-се гордееме со вас и ви посакуваме многу успех и во наредните натпревари🍀</p>
+                <p>На 26.12.2025 г. следуваше уште еден голем успех – прво место на зонските натпревари во женска конкуренција, исто така со две победи.
+                Ментор на женската екипа беше Илија Ангелески.</p>
+                <p>Честитки до сите учесници за победата, се гордееме со вас и ви посакуваме многу успех и во наредните натпревари🍀</p>
             </div>
 
             <h3 class="reveal" style="margin-bottom:30px; color:var(--ricko-blue); font-weight:800;">Галерија од настанот</h3>
@@ -67,7 +72,7 @@
             </div>
 
             <div class="back-nav reveal">
-                <a href="nastani.html" class="btn-back" style="color: white;">
+                <a href="nastani.html" class="btn-back">
                     <i class="fas fa-arrow-left"></i> Назад кон сите настани
                 </a>
             </div>
@@ -80,10 +85,10 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-logo">РИЧКО</div>
-                    <p class="footer-text">Средно општинско училиште за стручно образование. Формираме кадри за иднината.</p>
+                    <p>Средно општинско училиште за стручно образование. Формираме кадри за иднината.</p>
                     <div class="social-icons">
                         <a href="https://www.facebook.com/rickoedumk"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.facebook.com/mladinskaricko"><i  class="r-symbol">M</i></a>
+                        <a href="https://www.facebook.com/mladinskaricko" class="social-logo-btn"><i class="r-symbol">M</i></a>
                         <a href="https://mk.linkedin.com/company/rickoedumk"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://www.instagram.com/u.u.z_ricko?igsh=YXB3cnBxc3ljbzF0"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -114,7 +119,9 @@
             </div>
         </div>
     </footer>
+
     <script>
+        // Scroll Reveal logic
         function reveal() {
             var reveals = document.querySelectorAll('.reveal');
             for (var i = 0; i < reveals.length; i++) {
@@ -125,7 +132,24 @@
                 }
             }
         }
-        window.addEventListener('scroll', reveal);
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
+
+        // Header Scrolled State (matches Index)
+        window.addEventListener('scroll', () => {
+            const badge = document.getElementById('logoBadge');
+            if (window.scrollY > 50) {
+                badge.classList.add('scrolled');
+            } else {
+                badge.classList.remove('scrolled');
+            }
+            reveal();
+        });
+
+        // Initial call
         reveal();
     </script>
 </body>
