@@ -202,9 +202,9 @@ p {
     box-shadow: 0 10px 20px rgba(59, 74, 107, 0.2);
 }
 
-/* =======================================================
-4. HEADER & NAVIGATION (The Hanging Logo)
-==========================================================*/
+/* ======================================================
+   4. HEADER & NAVIGATION
+   ====================================================== */
 header {
     height: var(--header-height);
     background: var(--white);
@@ -217,6 +217,7 @@ header {
     z-index: 1000;
     border-bottom: 5px solid var(--orange);
     box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
 }
 
 .logo-badge {
@@ -235,33 +236,26 @@ header {
     flex-direction: column;
     border: 1px solid #eee;
     border-top: none;
-    transition: var(--transition-smooth);
+    transition: all 0.6s ease-in-out;
     cursor: pointer;
 }
 
-.logo-badge:hover {
+.logo-badge.scrolled {
+    height: 95px;
+    width: 110px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.logo-badge:hover:not(.scrolled) {
     height: calc(var(--badge-height) + 15px);
     background: #fffdf5;
 }
 
 .logo-badge img {
     width: 85%;
-    height: auto;
+    height: 85%;
     object-fit: contain;
-}
-
-.logo-text {
-    font-weight: 900;
-    color: var(--ricko-blue);
-    font-size: 1.2rem;
-    text-align: center;
-    line-height: 1;
-}
-
-.logo-text span {
-    color: var(--orange);
-    font-size: 3rem;
-    display: block;
 }
 
 .header-title {
@@ -329,9 +323,9 @@ header {
     cursor: pointer;
 }
 
-/* ==============================================
-11. FOOTER
-=================================================*/
+/* ==========================================================================
+   11. FOOTER
+   ========================================================================== */
 footer {
     background-color: #1a252f;
     color: #bdc3c7;
@@ -347,47 +341,30 @@ footer {
 }
 
 .footer-logo {
-    font-weight: 900;
-    color: #fff;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    display: inline-block;
+    font-weight: 900; color: #fff; font-size: 1.5rem;
+    margin-bottom: 20px; display: inline-block;
     border-bottom: 3px solid var(--orange);
 }
 
-.footer-links li {
-    margin-bottom: 12px;
-}
-
-.footer-links a:hover {
-    color: var(--orange);
-    padding-left: 5px;
-}
+.footer-links li { margin-bottom: 12px; }
+.footer-links a:hover { color: var(--orange); padding-left: 5px; }
 
 .social-icons a {
-    display: inline-flex;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
+    display: inline-flex; width: 40px; height: 40px;
+    background: rgba(255,255,255,0.1);
     border-radius: 50%;
-    align-items: center;
-    justify-content: center;
+    align-items: center; justify-content: center;
     margin-right: 10px;
     transition: 0.3s;
 }
-
-.social-icons a:hover {
-    background: var(--orange);
-    color: white;
-}
+.social-icons a:hover { background: var(--orange); color: white; }
 
 .copyright {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 25px;
     text-align: center;
     font-size: 0.8rem;
 }
-
 
 /* ================= HERO ================= */
 .about-hero {
@@ -693,11 +670,6 @@ footer {
         display: none;
     }
 
-    .logo-badge {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
     .hero h1 {
         font-size: 3.5rem;
     }
@@ -714,11 +686,18 @@ footer {
 
     .logo-badge {
         position: relative;
-        left: auto;
+        left: 0;
+        top: 0;
+        height: 90px;
+        width: 90px;
+        border-radius: 0 0 15px 15px;
         transform: none;
-        top: -10px;
-        height: 120px;
-        width: 100px;
+    }
+
+    .logo-badge.scrolled {
+        height: 75px;
+        width: 75px;
+        border-radius: 0 0 10px 10px;
     }
 }
 
@@ -727,7 +706,7 @@ footer {
     .nav-menu {
         position: fixed;
         top: var(--header-height);
-        left: -100%;
+        right: -100%; /* start hidden on the right */
         width: 100%;
         height: calc(100vh - var(--header-height));
         background: var(--white);
@@ -739,7 +718,7 @@ footer {
     }
 
     .nav-menu.active {
-        left: 0;
+        right: 0; /* slide in from right */
     }
 
     .hamburger {
@@ -828,4 +807,3 @@ footer {
     from { opacity: 0; transform: translateX(10px); }
     to { opacity: 1; transform: translateX(0); }
 }
-
