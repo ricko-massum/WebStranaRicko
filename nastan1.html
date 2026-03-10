@@ -31,6 +31,10 @@
                 <li class="reveal d-400"><a href="index.html#location" class="nav-link">Контакт</a></li>
             </ul>
         </nav>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
     </header>
 
     <main class="article-main">
@@ -54,13 +58,14 @@
                 <p>Преку моќната драмска изведба, нашите ученици покажаа исклучителен талент, зрелост и одговорност, пренесувајќи силна порака до публиката. Претставата не беше само културен настан, туку и доказ дека младите можат да бидат носители на хумани вредности и општествена свест.</p>
                 <p>Со овој настан уште еднаш се потврди дека Ричко е училиште кое ги поддржува креативноста, уметноста и ангажираноста на учениците, поттикнувајќи ги да се изразат и да придонесат за заедницата.</p>
             </div>
-          
+
             <div class="video-container reveal">
-                <iframe src="https://www.youtube.com/embed/439QsG-jg4Q?si=wlOpWr8irnxbGl_f" title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen></iframe>
+                <video controls poster="IMAGES/nastani1.jpg">
+                    <source src="IMAGES/video.mp4" type="video/mp4">
+                    Вашиот прелистувач не поддржува видео.
+                </video>
             </div>
-         
+
             <h3 class="reveal" style="margin-bottom:30px; color:var(--ricko-blue); font-weight:800;">Галерија од настанот</h3>
             <div class="gallery-grid reveal">
                 <div class="gallery-item"><img src="IMAGES/1.jpg" alt="Фото 1"></div>
@@ -80,7 +85,7 @@
             </div>
 
             <div class="back-nav reveal">
-                <a href="nastani.html" class="btn-back"  style="color: white;">
+                <a href="nastani.html" class="btn-back">
                     <i class="fas fa-arrow-left"></i> Назад кон сите настани
                 </a>
             </div>
@@ -129,6 +134,7 @@
     </footer>
 
     <script>
+        // Reveal elements on scroll
         function reveal() {
             var reveals = document.querySelectorAll('.reveal');
             for (var i = 0; i < reveals.length; i++) {
@@ -139,7 +145,26 @@
                 }
             }
         }
-        window.addEventListener('scroll', reveal);
+
+        // Mobile Menu Toggle logic
+        function toggleMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('active');
+        }
+
+        // Header Scrolled Animation logic
+        window.addEventListener('scroll', () => {
+            const logoBadge = document.querySelector('.logo-badge');
+            if (window.scrollY > 50) {
+                logoBadge.classList.add('scrolled');
+            } else {
+                logoBadge.classList.remove('scrolled');
+            }
+            
+            reveal(); // Ensure reveal triggers on scroll
+        });
+
+        // Trigger reveal once on load
         reveal();
     </script>
 </body>
