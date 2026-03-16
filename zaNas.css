@@ -756,25 +756,9 @@ footer {
         height: 180px;
     }
 
-    
     .headmaster-card {
         flex-direction: column;
         text-align: center;
-        align-items: center;    
-        justify-content: center;         
-        width: 100%;
-    }
-    
-    .admin-person {
-        text-align: center;     
-        width: 100%;
-    }
-
-    .admin-person img {
-        display: block;
-        margin: 0 auto 15px;    
-        max-width: 80%;         
-        height: auto;
     }
 
     .history-wrapper {
