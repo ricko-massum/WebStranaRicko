@@ -26,11 +26,11 @@
 
         <nav>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html" class="nav-link">Почетна</a></li>
-                <li><a href="zaNas.html" class="nav-link">За нас</a></li>
-                <li><a href="nastani.html" class="nav-link">Настани</a></li>
-                <li><a href="struki.html" class="nav-link"> Квалификации и Сектори</a></li>
-                <li><a href="index.html#location" class="nav-link">Контакт</a></li>
+                <li class="reveal d-100"><a href="#home" class="nav-link">Почетна</a></li>
+                <li class="reveal d-100"><a href="zaNas.html" class="nav-link">За нас</a></li>
+                <li class="reveal d-200"><a href="nastani.html" class="nav-link">Настани</a></li>
+                <li class="reveal d-300"><a href="struki.html" class="nav-link">Квалификации и сектори</a></li>
+                <li class="reveal d-400"><a href="#location" class="nav-link">Контакт</a></li>
             </ul>
         </nav>
 
@@ -39,36 +39,37 @@
         </div>
     </header>
 
+
     <main>
         <section class="section-header">
-            <h2>Наши сектори</h2>
-            <p>Откријте ја вашата иднина.</p>
+            <h2 class="reveal" >Наши сектори</h2>
+            <p class="reveal">Откријте ја вашата иднина.</p>
         </section>
         <div class="majors-wrapper">
             <div class="grid-row">
-                <div class="major-item" onclick="openModal('modal-elektro')">
+                <div class="major-item reveal" onclick="openModal('modal-elektro')">
                     <img src="IMAGES/elektrotehnicka.png" alt="Електротехника">
                     <h3 class="major-title">Електротехника</h3>
                     <div class="btn-learn-more">Дознај Повеќе</div>
                 </div>
-                <div class="major-item" onclick="openModal('modal-mashin')">
+                <div class="major-item reveal" onclick="openModal('modal-mashin')">
                     <img src="IMAGES/masinska.jpg" alt="Машинство">
                     <h3 class="major-title">Машинство</h3>
                     <div class="btn-learn-more">Дознај Повеќе</div>
                 </div>
-                <div class="major-item" onclick="openModal('modal-soobrakaj')">
+                <div class="major-item reveal" onclick="openModal('modal-soobrakaj')">
                     <img src="IMAGES/patensob.jpg" alt="Сообраќај">
                     <h3 class="major-title">Сообраќај и транспорт</h3>
                     <div class="btn-learn-more">Дознај Повеќе</div>
                 </div>
             </div>
             <div class="grid-row">
-                <div class="major-item" onclick="openModal('modal-graf')">
+                <div class="major-item reveal" onclick="openModal('modal-graf')">
                     <img src="IMAGES/graficko.jpg" alt="Графичарство">
                     <h3 class="major-title">Графичарство</h3>
                     <div class="btn-learn-more">Дознај Повеќе</div>
                 </div>
-                <div class="major-item" onclick="openModal('modal-sport')">
+                <div class="major-item reveal" onclick="openModal('modal-sport')">
                     <img src="IMAGES/sportska.jpg" alt="Спортска Гимназија">
                     <h3 class="major-title">Спортска Гимназија</h3>
                     <div class="btn-learn-more">Дознај Повеќе</div>
@@ -305,6 +306,27 @@
     </footer>
 
     <script>
+        // 1. MOBILE MENU TOGGLE
+        function toggleMenu() {
+              const nav = document.getElementById('nav-menu');
+              nav.classList.toggle('active');
+        }
+        // 2. SCROLL REVEAL ANIMATION 
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            var windowHeight = window.innerHeight;
+            var elementVisible = 120;
+
+            for (var i = 0; i < reveals.length; i++) {
+               var elementTop = reveals[i].getBoundingClientRect().top;
+               if (elementTop < windowHeight - elementVisible) {
+                   reveals[i].classList.add('active');
+               }
+            }
+        } 
+        window.addEventListener('scroll', reveal);
+        reveal();
+
         // Header Logo Scroll Effect
         window.addEventListener('scroll', () => {
             const logo = document.getElementById('main-logo');
