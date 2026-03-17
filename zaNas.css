@@ -638,7 +638,7 @@ footer {
 
 .teacher-card img.square {
     object-fit: cover;
-    object-position: center;
+    object-position: top center;
 }
 
 .teacher-card:hover img {
@@ -706,7 +706,7 @@ footer {
     .nav-menu {
         position: fixed;
         top: var(--header-height);
-        right: -100%; /* start hidden on the right */
+        right: -100%; 
         width: 100%;
         height: calc(100vh - var(--header-height));
         background: var(--white);
@@ -718,7 +718,7 @@ footer {
     }
 
     .nav-menu.active {
-        right: 0; /* slide in from right */
+        right: 0; 
     }
 
     .hamburger {
@@ -748,9 +748,14 @@ footer {
         font-size: 2.5rem;
     }
 
+    .subject-group {
+        text-align: center;
+    }
+
     .subject-group h3 {
         font-size: 1.8rem;
     }
+
 
     .teacher-card img {
         height: 180px;
@@ -759,6 +764,8 @@ footer {
     .headmaster-card {
         flex-direction: column;
         text-align: center;
+        justify-content: center; 
+        align-items: center;
     }
 
     .history-wrapper {
@@ -796,6 +803,7 @@ footer {
 
     .subject-group h3 {
         font-size: 1.5rem;
+    
     }
 
     .teacher-card img {
