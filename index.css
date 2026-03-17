@@ -238,6 +238,43 @@ header {
     cursor: pointer;
 }
 
+/*=============== СПУШТАЧКО МЕНИ ============== */
+.nav-menu li.dropdown {
+    position: relative;
+}
+
+.nav-menu li.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    min-width: 200px;
+    z-index: 1000;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.nav-menu li.dropdown .dropdown-menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--dark-blue);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-menu li.dropdown .dropdown-menu li a:hover {
+    background-color: var(--orange);
+    color: var(--white);
+    transform: translateX(5px);
+}
+
+.nav-menu li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 /* =================================================
    5. HERO SECTION 
    ================================================= */
