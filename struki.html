@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>СОУ „Ристе Ристески - Ричко“</title>
 
-    <link rel="stylesheet" href="struki.css">
+    
+
+    <link rel="stylesheet" href="struki12.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
     <link rel="icon" type="image/x-icon" href="/IMAGES/favicon.png">
-    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2026/03/01/15/20260301150014-WPFTWD2L.js" defer></script>
+    
 </head>
 <body>
 
@@ -19,19 +25,20 @@
         <div class="logo-badge" id="main-logo">
             <img src="IMAGES/Лого.png" alt="Лого СОУ Ристе Ристески Ричко">
         </div>
-
+ <div class="header-title reveal d-100"></div>
         <div class="header-title">
+            <br><br>
             <strong>СОУ „Ристе Ристески</strong>
             <span>- Ричко“</span>
         </div>
 
         <nav>
             <ul class="nav-menu" id="nav-menu">
-                <li class="reveal d-100"><a href="index.html" class="nav-link">Почетна</a></li>
+                <li class="reveal d-100"><a href="#home" class="nav-link">Почетна</a></li>
                 <li class="reveal d-100"><a href="zaNas.html" class="nav-link">За нас</a></li>
                 <li class="reveal d-200"><a href="nastani.html" class="nav-link">Настани</a></li>
                 <li class="reveal d-300"><a href="struki.html" class="nav-link">Квалификации и сектори</a></li>
-                <li class="reveal d-400"><a href="index.html#location" class="nav-link">Контакт</a></li>
+                <li class="reveal d-400"><a href="#index.html#location" class="nav-link">Контакт</a></li>
             </ul>
         </nav>
 
@@ -40,37 +47,36 @@
         </div>
     </header>
 
-
     <main>
         <section class="section-header">
-            <h2 class="reveal" >Наши сектори</h2>
-            <p class="reveal">Откријте ја вашата иднина.</p>
+            <h2>Наши сектори</h2>
+            <p>Откријте ја вашата иднина.</p>
         </section>
         <div class="majors-wrapper">
             <div class="grid-row">
-                <div class="major-item reveal" onclick="openModal('modal-elektro')">
+                <div class="major-item" onclick="openModal('modal-elektro')">
                     <img src="IMAGES/elektrotehnicka.png" alt="Електротехника">
                     <h3 class="major-title">Електротехника</h3>
                     <div class="btn-learn-more">Дознај Повеќе</div>
                 </div>
-                <div class="major-item reveal" onclick="openModal('modal-mashin')">
+                <div class="major-item" onclick="openModal('modal-mashin')">
                     <img src="IMAGES/masinska.jpg" alt="Машинство">
                     <h3 class="major-title">Машинство</h3>
                     <div class="btn-learn-more">Дознај Повеќе</div>
                 </div>
-                <div class="major-item reveal" onclick="openModal('modal-soobrakaj')">
+                <div class="major-item" onclick="openModal('modal-soobrakaj')">
                     <img src="IMAGES/patensob.jpg" alt="Сообраќај">
                     <h3 class="major-title">Сообраќај и транспорт</h3>
                     <div class="btn-learn-more">Дознај Повеќе</div>
                 </div>
             </div>
             <div class="grid-row">
-                <div class="major-item reveal" onclick="openModal('modal-graf')">
+                <div class="major-item" onclick="openModal('modal-graf')">
                     <img src="IMAGES/graficko.jpg" alt="Графичарство">
                     <h3 class="major-title">Графичарство</h3>
                     <div class="btn-learn-more">Дознај Повеќе</div>
                 </div>
-                <div class="major-item reveal" onclick="openModal('modal-sport')">
+                <div class="major-item" onclick="openModal('modal-sport')">
                     <img src="IMAGES/sportska.jpg" alt="Спортска Гимназија">
                     <h3 class="major-title">Спортска Гимназија</h3>
                     <div class="btn-learn-more">Дознај Повеќе</div>
@@ -307,27 +313,6 @@
     </footer>
 
     <script>
-        // 1. MOBILE MENU TOGGLE
-        function toggleMenu() {
-              const nav = document.getElementById('nav-menu');
-              nav.classList.toggle('active');
-        }
-        // 2. SCROLL REVEAL ANIMATION 
-        function reveal() {
-            var reveals = document.querySelectorAll('.reveal');
-            var windowHeight = window.innerHeight;
-            var elementVisible = 120;
-
-            for (var i = 0; i < reveals.length; i++) {
-               var elementTop = reveals[i].getBoundingClientRect().top;
-               if (elementTop < windowHeight - elementVisible) {
-                   reveals[i].classList.add('active');
-               }
-            }
-        } 
-        window.addEventListener('scroll', reveal);
-        reveal();
-
         // Header Logo Scroll Effect
         window.addEventListener('scroll', () => {
             const logo = document.getElementById('main-logo');
@@ -360,5 +345,25 @@
             }
         }
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const reveals = document.querySelectorAll(".reveal");
+
+    function revealOnScroll() {
+        reveals.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+            const revealPoint = 120;
+
+            if (elementTop < windowHeight - revealPoint) {
+                el.classList.add("active");
+            }
+        });
+    }
+
+    revealOnScroll();
+    window.addEventListener("scroll", revealOnScroll);
+});
+</script>
 </body>
 </html>
