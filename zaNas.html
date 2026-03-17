@@ -9,10 +9,6 @@
     <link rel="stylesheet" href="zaNas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="IMAGES/favicon.ico">
-
-    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2026/03/01/15/20260301150014-WPFTWD2L.js" defer></script>
-
 </head>
 
 <body>
@@ -125,7 +121,7 @@
       <p>Заменик директор</p>
     </div>
   </div>
-
+ <br>
   <div class="teacher-grid">
     <div class="admin-person">
       <img src="IMAGES/психолог.jpg" alt="Психолог">
@@ -187,7 +183,7 @@
 
   <!-- Англиски јазик -->
   <div class="subject-group">
-    <h3>Англиски јазик</h3>
+    <h3 class="short">Англиски јазик </h3>
     <div class="teacher-grid">
       <div class="teacher-card">
         <img src="IMAGES/слика-професорка.png" alt="Teacher Photo" class="square">
@@ -563,7 +559,7 @@
         window.addEventListener('scroll', reveal);
         reveal();
 
-        // 3. LOGO SCROLL EFFECT (Added this to fix shrinking logo)
+        // 3. LOGO SCROLL EFFECT 
         window.addEventListener('scroll', () => {
             const logoBadge = document.querySelector('.logo-badge');
             if (window.scrollY > 50) {
