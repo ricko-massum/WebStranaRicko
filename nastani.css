@@ -1,5 +1,4 @@
-
-        /* ==========================================================================
+/* ==========================================================================
            1. CORE VARIABLES (Identical to Index)
            ========================================================================== */
         :root {
@@ -25,12 +24,14 @@
            2. GLOBAL STYLES
            ========================================================================== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            overflow-x: hidden; /* Added to HTML to strictly prevent side scroll */
+        }
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--white);
             color: #444;
             line-height: 1.6;
-            overflow-x: hidden;
         }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; }
@@ -315,53 +316,53 @@ header {
            7. RESPONSIVE
            ========================================================================== */
        @media (max-width: 768px) {
-.header-title {
-    display: none;
-}
-    .nav-menu {
-        position: fixed;
-        top: var(--header-height);
-        right: -100%; /* start hidden on right */
-        width: 100%;
-        height: calc(100vh - var(--header-height));
-        background: var(--white);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-        transition: 0.4s;
-        z-index: 999;
-    }
+        .header-title {
+            display: none;
+        }
+        .nav-menu {
+            position: fixed;
+            top: var(--header-height);
+            right: 0; 
+            transform: translateX(100%); /* Using transform instead of right: -100% prevents side scroll */
+            width: 100%;
+            height: calc(100vh - var(--header-height));
+            background: var(--white);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            transition: 0.4s;
+            z-index: 999;
+        }
 
-    .nav-menu.active {
-        right: 0; /* slide in from right */
-    }
+        .nav-menu.active {
+            transform: translateX(0); /* Slide in using transform */
+        }
 
-    .nav-link {
-        font-size: 1rem;
-    }    
+        .nav-link {
+            font-size: 1rem;
+        }    
 
-    .hamburger {
-        display: block;
-    }
+        .hamburger {
+            display: block;
+        }
 
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-  .logo-badge {
-        position: left;
-        left: 5;
-        top: 0;
-        height: 90px;
-        width: 90px;
-        border-radius: 0 0 15px 15px;
-        transform: none;
-    }
-    .logo-badge.scrolled {
-        padding-top: 10px;
-        height: 82px;
-        width: 82px;
-        border-radius: 0 0 10px 10px;
-    }
-    
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+        .logo-badge {
+            position: absolute; /* Fixed invalid 'position: left' */
+            left: 5%; /* Fixed invalid 'left: 5' missing unit */
+            top: 0;
+            height: 90px;
+            width: 90px;
+            border-radius: 0 0 15px 15px;
+            transform: none;
+        }
+        .logo-badge.scrolled {
+            padding-top: 10px;
+            height: 82px;
+            width: 82px;
+            border-radius: 0 0 10px 10px;
+        }
 }
