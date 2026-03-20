@@ -476,8 +476,11 @@ footer {
     margin-left: 50px;
 }
 
+.history-video iframe {
+    display: block;
+    border: none;
+}
 
-/* Slider Styling */
 .history-slider {
     position: relative;
     min-height: 200px; 
@@ -492,7 +495,6 @@ footer {
     display: block;
 }
 
-/* Копчиња за навигација */
 .slider-controls {
     display: flex;
     justify-content: center;
