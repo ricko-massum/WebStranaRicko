@@ -441,6 +441,12 @@ footer {
     display: block;
 }
 
+#history,
+#headmaster,
+#teachers {
+    scroll-margin-top: 160px;
+}
+
 /* ================= ИСТОРИЈАТ ================= */
 .history-video {
     max-width: 900px;
