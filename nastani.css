@@ -47,79 +47,156 @@
         .d-100 { transition-delay: 0.1s; }
         .d-200 { transition-delay: 0.2s; }
 
+        /* ==========================================================================  
+   3. HEADER (Updated with Index3 Scroll Animation)  
+   ========================================================================== */
+header {
+    height: var(--header-height);
+    background: var(--white);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 5px solid var(--orange);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: var(--transition-smooth);
+}
+
+.logo-badge {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: var(--badge-width);
+    height: var(--badge-height);
+    background: var(--white);
+    border-radius: 0 0 50% 50%;
+    box-shadow: var(--shadow-md);
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    border-top: none;
+    transition: all 0.6s ease-in-out;
+    cursor: pointer;
+}
+
+/* SCROLLED STATE (same behavior as index3) */
+.logo-badge.scrolled {
+    height: 95px;
+    width: 110px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Optional hover like index3 */
+.logo-badge:hover:not(.scrolled) {
+    height: calc(var(--badge-height) + 15px);
+    background: #fffdf5;
+}
+
+.logo-badge img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+.header-title {
+    position: absolute;
+    left: calc(5% + 160px);
+    top: 50%;
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    color: var(--ricko-blue);
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+
+.header-title strong {
+    font-weight: 900;
+    display: block;
+    font-size: 1.3rem;
+}
+
+.header-title span {
+    color: var(--orange);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--ricko-blue);
+    letter-spacing: 1px;
+    position: relative;
+    padding: 10px 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--orange);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--orange);
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--ricko-blue);
+    cursor: pointer;
+}
+
         /* ==========================================================================
-           3. HEADER (Standardized with Index)
+           4. HERO SECTION (Sub-page version)
            ========================================================================== */
-        header {
-            height: var(--header-height);
-            background: var(--white);
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 0 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 5px solid var(--orange);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .logo-badge {
-            position: absolute;
-            top: 0; left: 5%;
-            width: var(--badge-width);
-            height: var(--badge-height);
-            background: var(--white);
-            border-radius: 0 0 50% 50%;
-            box-shadow: var(--shadow-md);
-            z-index: 1001;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #eee;
-            border-top: none;
-        }
-
-        .logo-badge img { width: 85%; height: auto; }
-
-        .header-title {
-            position: absolute;
-            left: calc(5% + 160px);
-            top: 50%;
-            transform: translateY(-50%);
-            text-transform: uppercase;
-            font-size: 1.1rem;
-            line-height: 1.3;
-            color: var(--ricko-blue);
-            letter-spacing: 1px;
-            pointer-events: none;
-        }
-        .header-title strong { font-weight: 900; display: block; font-size: 1.3rem; }
-        .header-title span { color: var(--orange); }
-
-        .nav-menu { display: flex; gap: 40px; }
-        .nav-link {
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--ricko-blue);
-            letter-spacing: 1px;
+        .sub-hero {
+            height: 40vh;
+            min-height: 300px;
+            background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             position: relative;
-            padding: 10px 0;
+            display: flex;
+            align-items: center;
         }
-        .nav-link:hover, .nav-link.active { color: var(--orange); }
-        .nav-link::after {
+
+        .sub-hero::after {
             content: '';
             position: absolute;
-            bottom: 0; left: 0; width: 0; height: 3px;
-            background: var(--orange);
-            transition: 0.3s;
+            inset: 0;
+            background: linear-gradient(105deg, rgba(44, 62, 80, 0.9) 0%, rgba(59, 74, 107, 0.7) 100%);
+            z-index: 1;
         }
-        .nav-link:hover::after { width: 100%; }
 
-        .hamburger { display: none; font-size: 1.8rem; color: var(--ricko-blue); cursor: pointer; }
+        .hero-content { position: relative; z-index: 2; padding-left: 10%; color: var(--white); }
+        .hero-content h1 { font-size: 3.5rem; font-weight: 900; }
+        .hero-content h1 span { color: var(--light-yellow); }
 
-/*=============== СПУШТАЧКО МЕНИ ============== */
+        /*=============== СПУШТАЧКО МЕНИ ============== */
 .nav-menu li.dropdown {
     position: relative;
 }
@@ -156,33 +233,11 @@
     display: block;
 }
 
-        /* ==========================================================================
-           4. HERO SECTION (Sub-page version)
-           ========================================================================== */
-        .sub-hero {
-            height: 40vh;
-            min-height: 300px;
-            background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        .sub-hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(105deg, rgba(44, 62, 80, 0.9) 0%, rgba(59, 74, 107, 0.7) 100%);
-            z-index: 1;
-        }
-
-        .hero-content { position: relative; z-index: 2; padding-left: 10%; color: var(--white); }
-        .hero-content h1 { font-size: 3.5rem; font-weight: 900; }
-        .hero-content h1 span { color: var(--light-yellow); }
-
+#history,
+#headmaster,
+#teachers {
+    scroll-margin-top: 160px;
+}
         /* ==========================================================================
            5. EVENTS GRID
            ========================================================================== */
@@ -274,12 +329,6 @@
             padding-left: 5px;
         }
 
-        p {
-            color: var(--steel-blue);
-            margin-bottom: 15px;
-            font-weight: 400;
-}
-
         .social-icons a {
             display: inline-flex;
             width: 40px;
@@ -307,22 +356,61 @@
         /* ==========================================================================
            7. RESPONSIVE
            ========================================================================== */
-        @media (max-width: 1024px) {
-            .header-title { display: none; }
-            .logo-badge { left: 50%; transform: translateX(-50%); position: relative; top: -10px; height: 120px; width: 100px; }
-            header { justify-content: space-between; padding: 0 30px; }
-            .events-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-        display: flex;
-        gap: 30px;
-        list-style: none; /* <--- THIS REMOVES THE DOTS */
-        margin: 0;
-        padding: 0;
+           
+       @media (max-width: 768px) {
+.header-title {
+    display: none;
+}
+    .nav-menu {
+        position: fixed;
+        top: var(--header-height);
+        right: -100%; /* start hidden on right */
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        transition: 0.4s;
+        z-index: 999;
     }
-            .nav-menu.active { left: 0; }
-            .hamburger { display: block; }
-            .hero-content h1 { font-size: 2.5rem; }
-        }
+
+    .nav-menu.active {
+        right: 0; /* slide in from right */
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }    
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+  .logo-badge {
+        position: left;
+        left: 5;
+        top: 0;
+        height: 90px;
+        width: 90px;
+        border-radius: 0 0 15px 15px;
+        transform: none;
+    }
+    .logo-badge.scrolled {
+        padding-top: 10px;
+        height: 82px;
+        width: 82px;
+        border-radius: 0 0 10px 10px;
+    }
+    /* Hide the dropdown arrow on mobile devices (768px and below) */
+@media (max-width: 768px) {
+    .nav-menu li.dropdown .nav-link i.fa-caret-down {
+        display: none !important;
+    }
+}
+
+}
