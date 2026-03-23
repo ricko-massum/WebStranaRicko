@@ -817,6 +817,25 @@ footer {
         display: none !important;
     }
 }
+/* ======================================================
+   HIDDEN DROPDOWN ON MOBILE BURGER MENU
+   ====================================================== */
+@media (max-width: 768px) {
+    /* 1. Hides the arrow icon next to "За нас" */
+    .nav-menu li.dropdown .nav-link i.fa-caret-down {
+        display: none !important;
+    }
+
+    /* 2. Hides the entire dropdown submenu list */
+    .nav-menu li.dropdown .dropdown-menu {
+        display: none !important;
+    }
+    
+    /* 3. Ensures the dropdown doesn't appear even on hover in mobile view */
+    .nav-menu li.dropdown:hover .dropdown-menu {
+        display: none !important;
+    }
+}
 @media (max-width: 480px) {
     .section.teachers h2 {
         font-size: 2rem;
