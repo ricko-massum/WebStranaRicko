@@ -367,6 +367,10 @@ footer a {
     }
 }
 @media (max-width: 768px) {
+   html, body {
+        overflow-x: hidden; 
+        position: relative;
+    }
     .nav-menu {
         position: fixed;
         top: var(--header-height);
