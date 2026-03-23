@@ -454,6 +454,7 @@ footer {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    height: auto; 
 }
 
 .history-wrapper {
@@ -477,6 +478,8 @@ footer {
 }
 
 .history-video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; 
     display: block;
     border: none;
 }
