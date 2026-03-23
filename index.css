@@ -747,4 +747,12 @@ footer {
         border-radius: 20px; 
     }
     .event-card { min-width: 280px; }
+   @media (max-width: 768px) {
+    /* ... your existing mobile styles ... */
+
+    /* Targets the caret-down icon inside the dropdown link */
+    .nav-menu li.dropdown .nav-link i.fa-caret-down {
+        display: none;
+    }
+}
 }
