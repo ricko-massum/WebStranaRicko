@@ -811,7 +811,12 @@ footer {
         aspect-ratio: 16 / 9; 
     }
 }
-
+/* Hide the dropdown arrow on mobile devices (768px and below) */
+@media (max-width: 768px) {
+    .nav-menu li.dropdown .nav-link i.fa-caret-down {
+        display: none !important;
+    }
+}
 @media (max-width: 480px) {
     .section.teachers h2 {
         font-size: 2rem;
