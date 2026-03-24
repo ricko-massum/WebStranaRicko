@@ -382,11 +382,4 @@ footer a {
     }
 
     .hamburger { display: block; }
-
-    .article-title {
-        padding-right: 40px; 
-        box-sizing: border-box;
-        width: 100%;
-        display: block;
-    }
 }
