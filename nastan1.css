@@ -381,5 +381,7 @@ footer a {
         right: 0;
     }
 
-    .hamburger { display: block; }
+    .hamburger { 
+       display: block; 
+    }
 }
