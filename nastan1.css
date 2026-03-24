@@ -342,35 +342,27 @@ footer a {
    HIDDEN DROPDOWN ON MOBILE BURGER MENU
    ====================================================== */
 @media (max-width: 768px) {
-    /* 1. Hides the arrow icon next to "За нас" */
     .nav-menu li.dropdown .nav-link i.fa-caret-down {
         display: none !important;
     }
 
-    /* 2. Hides the entire dropdown submenu list */
     .nav-menu li.dropdown .dropdown-menu {
         display: none !important;
     }
    
-    /* 3. Ensures the dropdown doesn't appear even on hover in mobile view */
     .nav-menu li.dropdown:hover .dropdown-menu {
         display: none !important;
     }
-}
 
-@media (max-width: 768px) {
-    /* ... your existing mobile styles ... */
-
-    /* Targets the caret-down icon inside the dropdown link */
-    .nav-menu li.dropdown .nav-link i.fa-caret-down {
+   .nav-menu li.dropdown .nav-link i.fa-caret-down {
         display: none;
     }
-}
-@media (max-width: 768px) {
+
    html, body {
         overflow-x: hidden; 
         position: relative;
     }
+
     .nav-menu {
         position: fixed;
         top: var(--header-height);
@@ -390,4 +382,10 @@ footer a {
     }
 
     .hamburger { display: block; }
+
+    .article-title {
+        padding-right: 30px;
+        display: block;      
+        width: 100%;         
+    }
 }
