@@ -412,6 +412,38 @@ header {
         display: none !important;
     }
 }
+               /* ======================================================
+   FIX FOR EVENTS GRID ON MOBILE
+   ====================================================== */
+@media (max-width: 768px) {
+    .events-grid {
+        /* Change from 400px minimum to a single column that fits the screen */
+        grid-template-columns: 1fr; 
+        gap: 30px;
+        justify-items: center; /* Centers the cards horizontally */
+    }
+
+    .event-card {
+        width: 100%;
+        max-width: 450px; /* Optional: prevents cards from getting too wide on tablets */
+        margin: 0 auto;   /* Ensures they stay centered */
+    }
+
+    .card-body {
+        padding: 20px; /* Slightly less padding for smaller screens */
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem; /* Shrink title slightly to fit mobile */
+        text-align: center;
+    }
+    
+    .hero-content {
+        padding-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
 /* ======================================================
    HIDDEN DROPDOWN ON MOBILE BURGER MENU
    ====================================================== */
