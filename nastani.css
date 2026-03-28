@@ -37,7 +37,6 @@
         
         .container { max-width: var(--container-width); margin: 0 auto; padding: 0 25px; }
 
-        /* Scroll Reveal Utility */
         .reveal {
             transform: translateY(80px);
             opacity: 0;
@@ -84,7 +83,6 @@ header {
     cursor: pointer;
 }
 
-/* SCROLLED STATE (same behavior as index3) */
 .logo-badge.scrolled {
     height: 95px;
     width: 110px;
@@ -92,7 +90,6 @@ header {
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* Optional hover like index3 */
 .logo-badge:hover:not(.scrolled) {
     height: calc(var(--badge-height) + 15px);
     background: #fffdf5;
@@ -364,7 +361,7 @@ header {
     .nav-menu {
         position: fixed;
         top: var(--header-height);
-        right: -100%; /* start hidden on right */
+        right: -100%; 
         width: 100%;
         height: calc(100vh - var(--header-height));
         background: var(--white);
@@ -377,7 +374,7 @@ header {
     }
 
     .nav-menu.active {
-        right: 0; /* slide in from right */
+        right: 0; 
     }   
 
     .hamburger {
@@ -402,7 +399,7 @@ header {
         width: 82px;
         border-radius: 0 0 10px 10px;
     }
-    /* Hide the dropdown arrow on mobile devices (768px and below) */
+    
 @media (max-width: 768px) {
     .nav-menu li.dropdown .nav-link i.fa-caret-down {
         display: none !important;
@@ -413,24 +410,23 @@ header {
    ====================================================== */
 @media (max-width: 768px) {
     .events-grid {
-        /* Change from 400px minimum to a single column that fits the screen */
         grid-template-columns: 1fr; 
         gap: 30px;
-        justify-items: center; /* Centers the cards horizontally */
+        justify-items: center; 
     }
 
     .event-card {
         width: 100%;
-        max-width: 450px; /* Optional: prevents cards from getting too wide on tablets */
-        margin: 0 auto;   /* Ensures they stay centered */
+        max-width: 450px; 
+        margin: 0 auto;   
     }
 
     .card-body {
-        padding: 20px; /* Slightly less padding for smaller screens */
+        padding: 20px; 
     }
 
     .hero-content h1 {
-        font-size: 2.2rem; /* Shrink title slightly to fit mobile */
+        font-size: 2.2rem; 
         text-align: center;
     }
     
@@ -444,12 +440,10 @@ header {
    HIDDEN DROPDOWN ON MOBILE BURGER MENU
    ====================================================== */
 @media (max-width: 768px) {
-    /* 1. Hides the arrow icon next to "За нас" */
     .nav-menu li.dropdown .nav-link i.fa-caret-down {
         display: none !important;
     }
 
-    /* 2. Hides the entire dropdown submenu list */
     .nav-menu li.dropdown .dropdown-menu {
         display: none !important;
     }
@@ -458,7 +452,7 @@ header {
     transform: none !important;
     transition: none !important;
 }
-    /* 3. Ensures the dropdown doesn't appear even on hover in mobile view */
+        
     .nav-menu li.dropdown:hover .dropdown-menu {
         display: none !important;
     }
