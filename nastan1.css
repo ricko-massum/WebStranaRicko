@@ -38,7 +38,6 @@ body {
     padding: 0 25px;
 }
 
-/* Scroll Reveal Utility */
 .reveal {
     transform: translateY(50px);
     opacity: 0;
@@ -88,7 +87,6 @@ header {
     cursor: pointer;
 }
 
-/* Scrolled State Animation */
 .logo-badge.scrolled {
     height: 95px;
     width: 110px;
@@ -175,7 +173,7 @@ header {
     cursor: pointer;
 }
 
-/*=============== СПУШТАЧКО МЕНИ ============== */
+/*=============== DROP-DOWN MENU ============== */
 .nav-menu li.dropdown {
     position: relative;
 }
