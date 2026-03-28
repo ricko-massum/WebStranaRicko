@@ -27,7 +27,6 @@ body {
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
 
-/* Scroll Reveal */
 .reveal {
     transform: translateY(50px);
     opacity: 0;
@@ -67,7 +66,6 @@ header {
     justify-content: center;
     border: 1px solid #eee;
     border-top: none;
-    /* Slowed down transition for the shrink animation */
     transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     cursor: pointer;
 }
@@ -131,7 +129,7 @@ header {
     cursor: pointer;
 }
 
-/*=============== СПУШТАЧКО МЕНИ ============== */
+/*=============== DROP-DOWN MENU ============== */
 .nav-menu li.dropdown {
     position: relative;
 }
@@ -257,12 +255,10 @@ footer { background-color: #1a252f; color: #bdc3c7; padding: 80px 0 20px; font-s
    HIDDEN DROPDOWN ON MOBILE BURGER MENU
    ====================================================== */
 @media (max-width: 768px) {
-    /* 1. Hides the arrow icon next to "За нас" */
     .nav-menu li.dropdown .nav-link i.fa-caret-down {
         display: none !important;
     }
 
-    /* 2. Hides the entire dropdown submenu list */
     .nav-menu li.dropdown .dropdown-menu {
         display: none !important;
     }
@@ -271,16 +267,13 @@ footer { background-color: #1a252f; color: #bdc3c7; padding: 80px 0 20px; font-s
     transform: none !important;
     transition: none !important;
 }
-    /* 3. Ensures the dropdown doesn't appear even on hover in mobile view */
+   
     .nav-menu li.dropdown:hover .dropdown-menu {
         display: none !important;
     }
 }
 
 @media (max-width: 768px) {
-    /* ... your existing mobile styles ... */
-
-    /* Targets the caret-down icon inside the dropdown link */
     .nav-menu li.dropdown .nav-link i.fa-caret-down {
         display: none;
     }
