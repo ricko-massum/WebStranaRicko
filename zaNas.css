@@ -727,7 +727,11 @@ footer {
         transition: 0.4s;
         z-index: 999;
     }
-
+.nav-menu li {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
     .nav-menu.active {
         right: 0; 
     }
