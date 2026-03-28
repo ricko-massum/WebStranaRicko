@@ -591,7 +591,11 @@ footer h5 { font-weight: 800; line-height: 1.2; }
     .nav-menu li.dropdown .dropdown-menu {
         display: none !important;
     }
-   
+   .nav-menu li {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
     /* 3. Ensures the dropdown doesn't appear even on hover in mobile view */
     .nav-menu li.dropdown:hover .dropdown-menu {
         display: none !important;
