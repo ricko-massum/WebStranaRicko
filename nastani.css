@@ -378,17 +378,7 @@ header {
 
     .nav-menu.active {
         right: 0; /* slide in from right */
-    }
-
-   .nav-link {
-    font-size: 14px !important; 
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--ricko-blue);
-    letter-spacing: 1px;
-    position: relative;
-    padding: 10px 0;
-}       
+    }   
 
     .hamburger {
         display: block;
