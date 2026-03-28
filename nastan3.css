@@ -266,7 +266,11 @@ footer { background-color: #1a252f; color: #bdc3c7; padding: 80px 0 20px; font-s
     .nav-menu li.dropdown .dropdown-menu {
         display: none !important;
     }
-   
+   .nav-menu li {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
     /* 3. Ensures the dropdown doesn't appear even on hover in mobile view */
     .nav-menu li.dropdown:hover .dropdown-menu {
         display: none !important;
