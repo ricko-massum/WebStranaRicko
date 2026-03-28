@@ -465,7 +465,11 @@ footer a {
     .nav-menu li.dropdown .nav-link i.fa-caret-down {
         display: none;
     }
-
+.nav-menu li {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
     html,
     body {
         overflow-x: hidden;
