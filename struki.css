@@ -1,4 +1,6 @@
-/* --- 1. ОСНОВНИ ПОСТАВКИ --- */
+/* ====================================================
+   1. SETUP
+   ==================================================== */
 :root {
     --color-dark-blue: #0F3460;
     --color-orange: #FF9F1C;
@@ -37,7 +39,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
 
 /* ====================================================
-   2. REVEAL ANIMATIONS (ADDED)
+   2. REVEAL ANIMATIONS 
    ==================================================== */
 .reveal {
     position: relative;
@@ -106,7 +108,7 @@ ul { list-style: none; }
 }
 
 /* ======================================================
-   HEADER & NAVIGATION 
+   3. HEADER & NAVIGATION 
    ====================================================== */
 header {
     height: var(--header-height);
@@ -209,7 +211,7 @@ header {
 
 .hamburger { display: none; font-size: 1.8rem; color: var(--ricko-blue); cursor: pointer; }
 
-/*=============== СПУШТАЧКО МЕНИ ============== */
+/*=============== DROP-DOWN MENU ============== */
 .nav-menu li.dropdown {
     position: relative;
 }
@@ -246,7 +248,9 @@ header {
     display: block;
 }
 
-/* --- 3. GRID LAYOUT --- */
+/* ======================================================
+   4. GRID LAYOUT 
+   ====================================================== */
 .section-header {
     text-align: center;
     padding: 80px 20px 40px;
@@ -358,7 +362,9 @@ header {
     box-shadow: 0 12px 25px rgba(255, 159, 28, 0.4);
 }
 
-/* --- 4. MODAL STYLES --- */
+/* ======================================================
+   5. MODAL STYLES 
+   ====================================================== */
 .modal {
     display: none;
     position: fixed;
@@ -496,7 +502,9 @@ header {
 
 .subject-list li { margin-bottom: 6px; }
 
-/* --- 5.FOOTER --- */
+/* ====================================================
+   6. FOOTER
+   ==================================================== */
 footer {
     background-color: #1a252f;
     color: #bdc3c7;
@@ -558,7 +566,9 @@ footer h5 { font-weight: 800; line-height: 1.2; }
     color: #bdc3c7;
 }
 
-/* --- 6. RESPONSIVENESS --- */
+/* ======================================================
+   7. RESPONSIVENESS
+   ====================================================== */
 @media (max-width: 1024px) {
     .header-title { display: none; } 
     header { justify-content: space-between; padding: 0 30px; }
@@ -582,12 +592,10 @@ footer h5 { font-weight: 800; line-height: 1.2; }
    HIDDEN DROPDOWN ON MOBILE BURGER MENU
    ====================================================== */
 @media (max-width: 768px) {
-    /* 1. Hides the arrow icon next to "За нас" */
     .nav-menu li.dropdown .nav-link i.fa-caret-down {
         display: none !important;
     }
 
-    /* 2. Hides the entire dropdown submenu list */
     .nav-menu li.dropdown .dropdown-menu {
         display: none !important;
     }
@@ -596,16 +604,13 @@ footer h5 { font-weight: 800; line-height: 1.2; }
     transform: none !important;
     transition: none !important;
 }
-    /* 3. Ensures the dropdown doesn't appear even on hover in mobile view */
+
     .nav-menu li.dropdown:hover .dropdown-menu {
         display: none !important;
     }
 }
 
 @media (max-width: 768px) {
-    /* ... your existing mobile styles ... */
-
-    /* Targets the caret-down icon inside the dropdown link */
     .nav-menu li.dropdown .nav-link i.fa-caret-down {
         display: none;
     }
